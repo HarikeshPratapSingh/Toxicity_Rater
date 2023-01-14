@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="login">
+      <h1>Toxicity Rater</h1>
+      <form action="{{ url_for('score')}}" , method="post">
+        <textarea
+          placeholder="Enter Text"
+          name="u"
+          required
+          rows="8"
+        ></textarea>
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Score
+        </button>
+      </form>
+      <br />
+      <br />
+      <div class="predict">
+        {{ prediction_text }}
+      </div>
+    </div>
+  </body>
+</html>
